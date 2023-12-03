@@ -1,6 +1,6 @@
 # Keep it simple
 
-Connect to the machine 10.10.X.X using SSH an log in as the 'monitor' user
+Connect to the machine 10.10.X.X using SSH an log in.
 
 First off lets see if there is anything interesting in the home directory;
 
