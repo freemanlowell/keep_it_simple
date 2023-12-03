@@ -1,6 +1,6 @@
-# Simple
+# Keep it simple
 
-Connect to the machine x.x.x.x using SSH an log in as the 'monitor' user
+Connect to the machine 10.10.X.X using SSH an log in as the 'monitor' user
 
 First off lets see if there is anything interesting in the home directory;
 
@@ -51,7 +51,7 @@ Time to research the SNMP Extend MIB and find out what it's all about.  Here is 
 
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sect-system_monitoring_tools-net-snmp-extending
 
-We have now learned that as well as reporting on the usual system and network metrics SNMP can also be extentded to run custom scripts!
+We have now learned that as well as reporting on the usual system and networking metrics SNMP can also be extentded to run custom scripts!
 
 Looking at todo list task 2 we can get the idea that script names used here have not been standardised.  Don't know what that means but we can keep this in mind for later.
 
@@ -118,7 +118,7 @@ Nothing!
 
 Task 2 mentions some inconstency in file naming so let's be less specific;
 
-    find / -type f -name check* 2>/dev/null" we can see some scripts including a "check_disk.sh" in directory /usr/local/bin/monitoring/
+    find / -type f -name check* 2>/dev/null" 
 
 The /usr/local/bin/monitoring/ folder looks right.  
 
