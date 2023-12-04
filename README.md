@@ -1,10 +1,10 @@
 # Keep it simple
 
-## Task1
+## Question 1
 Start the machine, connect to 10.10.X.X using SSH an log in.
 
 
-## Task2
+## Question 2
 First off lets see if there is anything interesting in the home directory;
 
     [monitor@simple ~]$ ls
@@ -60,7 +60,7 @@ Looking at todo list task 2 we can get the idea that script names used here have
 
 As we now know from todo list task 1 & our own research we now know the answer to task 2!
 
-## Task3
+## Question 3
 How to get that root flag?
 
 Let's see if an SNMP server is running on our host;
@@ -98,7 +98,7 @@ Lets see if we can see any SNMP traffic hitting our host - time to fire up tcpdu
     6 packets received by filter
     0 packets dropped by kernel
 
-Jackpot!  We can see SNMP traffic on the loopback interface and whats more an older version (i.e. 1 or 2c) is being used to we can see the SNMP data - including the community
+Yay! We can see SNMP requests and replies on the loopback interface! Looks like an older version (i.e. 1 or 2c) is being used to we can see the SNMP data - including the community
 in plain text!
 
 So let's recap what we now know;
@@ -122,7 +122,7 @@ Lets start looking for file called something like "checkDisk"
 
 Nothing!
 
-Task 2 mentions some inconstency in file naming so let's be less specific;
+Let's be less specific;
 
     find / -type f -name check* 2>/dev/null" 
 
