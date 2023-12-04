@@ -61,7 +61,7 @@ Looking at todo list task 2 we can get the idea that script names used here have
 As we now know from todo list task 1 & our own research we now know the answer to task 2!
 
 ## Task3
-How to ge that root flag?
+How to get that root flag?
 
 Let's see if an SNMP server is running on our host;
 
